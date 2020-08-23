@@ -31,4 +31,11 @@ public interface Notice_DAOInter {
 	  * @return
 	  */
 	 public int passwd_check(HashMap<Object, Object> map);
+	 
+	 /**
+	  * 조회수 증가
+	  * @param board_no
+	  * @return
+	  */
+	 public int board_cnt_up(int board_no);
 }

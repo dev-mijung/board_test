@@ -43,5 +43,10 @@ SELECT COUNT(*) AS passwd_cnt
 FROM board
 WHERE board_no='1' AND board_passwd = '1234';
 
+-- 조회수 증가
+UPDATE board
+SET board_cnt = board_cnt + 1
+WHERE board_no =1;
+
 
 COMMIT;

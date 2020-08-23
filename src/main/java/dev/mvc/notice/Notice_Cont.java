@@ -96,6 +96,10 @@ public class Notice_Cont {
 	NoticeVO noticeVO = this.notice_Proc.read(board_no);
 	mav.addObject("noticeVO", noticeVO);
 	
+	// 조회 수 증가
+	int cnt = this.notice_Proc.board_cnt_up(board_no);
+	mav.addObject("cnt", cnt);
+	
 	mav.setViewName("/notice/secret_read");
 	
 	return mav;
@@ -121,4 +125,21 @@ public class Notice_Cont {
 	
 	return json.toString();
 	}
+
+///**
+// * 조회수 증가
+// * @param board_no
+// * @return
+// */
+//@RequestMapping(value="/notice/cnt_up.do", method=RequestMethod.GET)
+//	public ModelAndView board_cnt_up(int board_no) {
+//	ModelAndView mav = new ModelAndView();
+//	
+//	int cnt = this.notice_Proc.board_cnt_up(board_no);
+//	mav.addObject("cnt", cnt);
+//	
+//	mav.setViewName("redirect:/notice/cnt_up");
+//	
+//	return mav;
+//}
 }

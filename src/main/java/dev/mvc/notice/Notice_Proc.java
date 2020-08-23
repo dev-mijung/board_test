@@ -35,4 +35,10 @@ public class Notice_Proc implements Notice_ProcInter{
 		return passwd_check;
 	}
 
+	@Override
+	public int board_cnt_up(int board_no) {
+		int cnt = this.notice_DAO.board_cnt_up(board_no);
+		return cnt;
+	}
+
 }

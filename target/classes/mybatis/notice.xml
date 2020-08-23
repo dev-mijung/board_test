@@ -28,5 +28,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	FROM board
 	WHERE board_no=#{board_no} AND board_passwd = #{board_passwd}
   </select>
+  
+  <update id="board_cnt_up" parameterType="int">
+  	UPDATE board
+	SET board_cnt = board_cnt + 1
+	WHERE board_no =#{board_no}
+  </update>
 
 </mapper>
